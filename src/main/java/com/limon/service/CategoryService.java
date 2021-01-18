@@ -20,7 +20,7 @@ public class CategoryService {
     private final CategoryRepository categoryRepository;
 
     public Page<Category> getAll(int pageNumber, int pageSize, String sortedBy, String orderBy){
-        Sort sort = orderBy.equals(orderBy) ? Sort.by(sortedBy).ascending() : Sort.by(sortedBy).descending() ;
+        Sort sort = orderBy.equals("asc") ? Sort.by(sortedBy).ascending() : Sort.by(sortedBy).descending() ;
         Pageable pageable = PageRequest.of(pageNumber - 1, pageSize, sort);
         return categoryRepository.findAll(pageable);
     }

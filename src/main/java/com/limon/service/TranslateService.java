@@ -29,9 +29,13 @@ public class TranslateService {
     }
 
     public Page<TranslateDTO> getAll(String word,int pageNumber, int pageSize, String sortedBy, String orderBy){
-        Sort sort = orderBy.equals(orderBy) ? Sort.by(sortedBy).ascending() : Sort.by(sortedBy).descending() ;
+        Sort sort = orderBy.equals("asc") ? Sort.by(sortedBy).ascending() : Sort.by(sortedBy).descending() ;
         Pageable pageable = PageRequest.of(pageNumber - 1, pageSize, sort);
         return translateRepository.findAllPageable(word,pageable);
+    }
+
+    public void save(TranslateDTO translateDTO){
+
     }
 
 }

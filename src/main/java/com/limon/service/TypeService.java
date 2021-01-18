@@ -19,7 +19,7 @@ public class TypeService {
     private final TypeRepository typeRepository;
 
     public Page<Type> getAll(int pageNumber, int pageSize, String sortedBy, String orderBy){
-        Sort sort = orderBy.equals(orderBy) ? Sort.by(sortedBy).ascending() : Sort.by(sortedBy).descending() ;
+        Sort sort = orderBy.equals("asc") ? Sort.by(sortedBy).ascending() : Sort.by(sortedBy).descending() ;
         Pageable pageable = PageRequest.of(pageNumber - 1, pageSize, sort);
         return typeRepository.findAll(pageable);
     }

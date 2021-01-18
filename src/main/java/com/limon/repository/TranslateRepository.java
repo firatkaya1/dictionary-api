@@ -19,4 +19,5 @@ public interface TranslateRepository extends JpaRepository<Translate,Long> {
 
     @Query(name = "findByWord",nativeQuery = true)
     Page<TranslateDTO> findAllPageable(@Param("keyword") String keyword,Pageable pageable);
+
 }
