@@ -1,7 +1,6 @@
 package com.limon.service;
 
 import com.limon.entity.Turkish;
-import com.limon.exception.CategoryNotFoundException;
 import com.limon.exception.TurkishWordAlreadyExistsException;
 import com.limon.exception.TurkishWordNotFoundException;
 import com.limon.repository.TurkishRepository;
@@ -52,14 +51,23 @@ public class TurkishService {
      * If ID not exists in table then an exception
      * will thrown.
      * @param id Primary Key in the table.
-     * @return Turkish
+     * @return An entity that represent the Turkish
      * @see  com.limon.entity.Turkish
-     * @exception TurkishWordNotFoundException
+     * @exception TurkishWordNotFoundException thrown
      */
     public Turkish getTurkish(Long id){
         return turkishRepository.findById(id)
                 .orElseThrow(()->new TurkishWordNotFoundException(id));
     }
+
+    /**
+     * This method used to save turkish word.
+     * If turkish word is already exists in database then
+     * an exception will thrown.
+     * @param turkish An entity that represent the Turkish
+     * @see  com.limon.entity.Turkish
+     * @exception TurkishWordAlreadyExistsException thrown
+     */
 
     public void saveTurkish(Turkish turkish){
         Turkish tr = turkishRepository.findByWord(turkish.getWord());
@@ -68,12 +76,28 @@ public class TurkishService {
         else throw new TurkishWordAlreadyExistsException(tr);
     }
 
+    /**
+     * This method used to update turkish word.
+     * If category is not found in database then
+     * an exception will thrown.
+     * @param turkish An entity that represent the Turkish
+     * @see  com.limon.entity.Turkish
+     * @exception TurkishWordNotFoundException thrown
+     */
     public void updateTurkish(Turkish turkish){
         if (turkishRepository.existsById(turkish.getId()))
             turkishRepository.save(turkish);
         else throw new  TurkishWordNotFoundException(turkish.getId());
     }
 
+    /**
+     * This method used to delete turkish word by id.
+     * If ID is not exists in database then
+     * an exception will thrown.
+     * @param id Primary Key in the table.
+     * @see  com.limon.entity.Turkish
+     * @exception TurkishWordNotFoundException thrown
+     */
     public void deleteTurkish(Long id){
         if (turkishRepository.existsById(id))
             turkishRepository.deleteById(id);

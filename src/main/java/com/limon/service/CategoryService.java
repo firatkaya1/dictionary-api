@@ -84,7 +84,6 @@ public class CategoryService {
      * @param category An entity that represent the Category
      * @see  com.limon.entity.Category
      * @exception CategoryNotFoundException thrown
-     *
      */
 
     public void updateCategory(Category category){

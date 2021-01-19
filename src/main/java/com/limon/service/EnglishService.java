@@ -32,7 +32,7 @@ public class EnglishService {
     /**
      * This method used to get english words.
      * If a english word has many matches with category,type
-     * and turkish meaning than values will be pageable format
+     * and turkish meaning then values will be pageable format
      * even maximum element one.
      * @param pageNumber page number
      * @param pageSize maximum element in a page
@@ -49,9 +49,9 @@ public class EnglishService {
 
     /**
      * This method used to find word by ID. If value
-     * not exists than an exception will thrown.
+     * not exists then an exception will thrown.
      * @param id Primary Key in the table.
-     * @exception EnglishWordNotFoundException
+     * @exception EnglishWordNotFoundException thrown
      * @return English entity
      */
 
@@ -62,11 +62,10 @@ public class EnglishService {
 
     /**
      * This method used to save new english value.
-     * If value is already exists in database than
+     * If value is already exists in database then
      * an exception will thrown.
      * @param english An Entity @see {@link English}
-     * @exception EnglishWordAlreadyExistsException
-     * @return void
+     * @exception EnglishWordAlreadyExistsException thrown
      */
 
     public void saveEnglish(English english){
@@ -78,11 +77,10 @@ public class EnglishService {
 
     /**
      * This method used to update english value.
-     * If value is not found in database than
+     * If value is not found in database then
      * an exception will thrown.
-     * @param english
-     * @exception EnglishWordNotFoundException
-     * @return void
+     * @param english An entity that represent the Turkish
+     * @exception EnglishWordNotFoundException thrown
      */
     public void updateEnglish(English english){
         if (englishRepository.existsById(english.getId()))
@@ -92,11 +90,10 @@ public class EnglishService {
 
     /**
      * This method used to delete english value by id.
-     * If ID is not exists in database than
+     * If ID is not exists in database then
      * an exception will thrown.
      * @param id Primary key in table
-     * @exception EnglishWordNotFoundException
-     * @return void
+     * @exception EnglishWordNotFoundException thrown
      */
     public void deleteEnglish(Long id){
         if (englishRepository.existsById(id))

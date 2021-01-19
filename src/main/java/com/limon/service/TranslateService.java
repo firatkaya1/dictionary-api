@@ -2,7 +2,6 @@ package com.limon.service;
 
 import com.limon.entity.Translate;
 import com.limon.dto.TranslateDTO;
-import com.limon.exception.CategoryNotFoundException;
 import com.limon.exception.TranslateNotFoundException;
 import com.limon.repository.TranslateRepository;
 import lombok.RequiredArgsConstructor;
@@ -33,13 +32,13 @@ public class TranslateService {
     private final TranslateRepository translateRepository;
 
     /**
-     * This method used to find category by ID.
-     * If ID not exists in table than an exception
+     * This method used to find translate by ID.
+     * If ID not exists in table then an exception
      * will thrown.
      * @param id Primary Key in the table.
      * @return Translate
      * @see com.limon.entity.Translate
-     * @exception TranslateNotFoundException
+     * @exception TranslateNotFoundException thrown
      */
 
     public Translate getWord(Long id){
