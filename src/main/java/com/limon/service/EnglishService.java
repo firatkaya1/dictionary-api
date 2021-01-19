@@ -12,6 +12,17 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+/**
+ * This is a service layer which is between
+ * repository and controller layers. In this
+ * layer, you can manage the English service.
+ * Simply you can do CRUD stuff in here.
+ * @author firatkaya1
+ * @version 1.0.0
+ * @see com.limon.repository.EnglishRepository
+ * @see com.limon.entity.English
+ */
+
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class EnglishService {
@@ -27,7 +38,7 @@ public class EnglishService {
      * @param pageSize maximum element in a page
      * @param sortedBy sorted by name or id
      * @param orderBy order by ASC or DESC
-     * @return
+     * @return English entities in pageable format
      */
 
     public Page<English> getAll(int pageNumber, int pageSize, String sortedBy, String orderBy){
@@ -40,8 +51,8 @@ public class EnglishService {
      * This method used to find word by ID. If value
      * not exists than an exception will thrown.
      * @param id Primary Key in the table.
-     * @return
      * @exception EnglishWordNotFoundException
+     * @return English entity
      */
 
     public English getEnglish(Long id){
@@ -55,6 +66,7 @@ public class EnglishService {
      * an exception will thrown.
      * @param english An Entity @see {@link English}
      * @exception EnglishWordAlreadyExistsException
+     * @return void
      */
 
     public void saveEnglish(English english){
@@ -70,6 +82,7 @@ public class EnglishService {
      * an exception will thrown.
      * @param english
      * @exception EnglishWordNotFoundException
+     * @return void
      */
     public void updateEnglish(English english){
         if (englishRepository.existsById(english.getId()))
@@ -83,6 +96,7 @@ public class EnglishService {
      * an exception will thrown.
      * @param id Primary key in table
      * @exception EnglishWordNotFoundException
+     * @return void
      */
     public void deleteEnglish(Long id){
         if (englishRepository.existsById(id))

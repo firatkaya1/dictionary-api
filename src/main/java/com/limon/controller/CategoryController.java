@@ -2,7 +2,6 @@ package com.limon.controller;
 
 import com.limon.entity.Category;
 import com.limon.service.CategoryService;
-import com.limon.service.TranslateService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
