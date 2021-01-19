@@ -1,20 +1,21 @@
 package com.limon.exception;
 
-import com.limon.entity.Category;
+import com.limon.entity.English;
+import com.limon.entity.Turkish;
 
 import java.time.LocalDateTime;
 
 /**
- * This error is thrown when the same value
- * is found in the category table.
+ * This error is thrown when the same english
+ * word is found in the english table.
  */
 
-public class CategoryAlreadyExistsException extends RuntimeException {
+public class EnglishWordAlreadyExistsException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
 
-    public CategoryAlreadyExistsException(Category category) {
-        super("There is already category name in this value :"+category.getName()+" id :"+category.getId());
+    public EnglishWordAlreadyExistsException(English english) {
+        super("There is already english word in this value :"+english.getWord()+" id :"+english.getId());
     }
 
     @Override

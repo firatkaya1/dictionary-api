@@ -1,20 +1,18 @@
 package com.limon.exception;
 
-import com.limon.entity.Category;
-
 import java.time.LocalDateTime;
 
 /**
- * This error is thrown when the same value
- * is found in the category table.
+ * This error is thrown when the value
+ * is not found in the turkish table.
  */
 
-public class CategoryAlreadyExistsException extends RuntimeException {
+public class TurkishWordNotFoundException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
 
-    public CategoryAlreadyExistsException(Category category) {
-        super("There is already category name in this value :"+category.getName()+" id :"+category.getId());
+    public TurkishWordNotFoundException(Long id) {
+        super("There is no english word in this id:"+id);
     }
 
     @Override

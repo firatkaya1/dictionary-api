@@ -2,6 +2,11 @@ package com.limon.exception;
 
 import java.time.LocalDateTime;
 
+/**
+ * This error is thrown when the value
+ * is not found in the type table.
+ */
+
 public class TypeNotFoundException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;

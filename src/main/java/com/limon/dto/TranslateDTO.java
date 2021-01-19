@@ -1,4 +1,4 @@
-package com.limon.entity;
+package com.limon.dto;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;

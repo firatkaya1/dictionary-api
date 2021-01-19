@@ -2,6 +2,7 @@ package com.limon.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.limon.dto.TranslateDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

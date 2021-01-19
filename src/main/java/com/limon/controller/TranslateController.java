@@ -1,6 +1,6 @@
 package com.limon.controller;
 
-import com.limon.entity.TranslateDTO;
+import com.limon.dto.TranslateDTO;
 import com.limon.service.TranslateService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

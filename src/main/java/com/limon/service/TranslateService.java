@@ -1,7 +1,7 @@
 package com.limon.service;
 
 import com.limon.entity.Translate;
-import com.limon.entity.TranslateDTO;
+import com.limon.dto.TranslateDTO;
 import com.limon.repository.TranslateRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

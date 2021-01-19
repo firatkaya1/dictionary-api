@@ -4,6 +4,11 @@ import com.limon.entity.Type;
 
 import java.time.LocalDateTime;
 
+/**
+ * This error is thrown when the value
+ * is already exists in the type table.
+ */
+
 public class TypeAlreadyExistsException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;

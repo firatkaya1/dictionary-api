@@ -1,7 +1,7 @@
 package com.limon.repository;
 
 import com.limon.entity.Translate;
-import com.limon.entity.TranslateDTO;
+import com.limon.dto.TranslateDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
