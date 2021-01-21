@@ -41,7 +41,14 @@ Bu adımda, başarılı bir şekilde çalıştırdığımız web servisin end-po
 
 Basit bir şekilde bu web servis, İngilizce,Türkçe kelimelere, Kategori ve Tip alanlarında arama,ekleme,çıkarma,güncelleme ve silme işlemlerini yapmasını sağlamak için oluşturulmuştur. Database'nin kendisine [bu adresten](https://raw.githubusercontent.com/firatkaya1/dictionary) ulaşabilirsiniz. 
 
-Toplamda 4 adet temel end-point bulunmaktadır. Bunlar english/  turkish/  category/  type/  ve translate/  dir. 
+Toplamda 5 adet temel end-point bulunmaktadır. Bunlar english/  turkish/  category/  type/  ve translate/  dir. 
+
+| Endpoint | HTTP Method | Açıklama |
+| ------------- | ------------- |------------- |
+| translate/id/{id}  | GET  | Belirtilen ID numarasına sahip eşleştirilmiş kelimeleri getirir. |
+| translate/{word} | GET | İngilizce kelimenin türkçe anlamlarını getirir. |
+| translate/ | GET | İngilizce kelimenin türkçe anlamlarını sayfalaştırılabilir bir formatta getirir. |
+
 
 | Endpoint | HTTP Method | Açıklama |
 | ------------- | ------------- |------------- |
@@ -49,6 +56,8 @@ Toplamda 4 adet temel end-point bulunmaktadır. Bunlar english/  turkish/  categ
 | english/ | POST | Yeni bir ingilizce kelime eklemek için kullanılır. (1) |
 | english/ | PUT | Veritabanında kayıtlı bir ingilizce kelimeyi güncellemek için kullanılır.  |
 | english/{id}  | DELETE | Veritabanında kayıtlı bir ingilizce kelimeyi silmek için kullanılır. |
+| english/ | GET | Tüm ingilizce kelimeleri sayfalaştırılabilir bir formatta getirir.(1) |
+
 
 | Endpoint | HTTP Method | Açıklama |
 | ------------- | ------------- |------------- |
@@ -56,6 +65,8 @@ Toplamda 4 adet temel end-point bulunmaktadır. Bunlar english/  turkish/  categ
 | turkish/ | POST | Yeni bir türkçe kelime eklemek için kullanılır. (1) |
 | turkish/ | PUT | Veritabanında kayıtlı bir türkçe kelimeyi güncellemek için kullanılır.  |
 | turkish/{id}  | DELETE | Veritabanında kayıtlı bir türkçe kelimeyi silmek için kullanılır. |
+| turkish/ | GET | Tüm ingilizce kelimeleri sayfalaştırılabilir bir formatta getirir.(1) |
+
 
 | Endpoint | HTTP Method | Açıklama |
 | ------------- | ------------- |------------- |
