@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/translate")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class TranslateController {
-
+    
     private final TranslateService translateService;
 
     @GetMapping(value = "/id/{id}")
@@ -30,7 +30,7 @@ public class TranslateController {
     public ResponseEntity<?> getAll(@RequestParam String word,
                                     @RequestParam(defaultValue = "1") int page,
                                     @RequestParam(defaultValue = "10") int size,
-                                    @RequestParam(defaultValue = "translate_id") String sort,
+                                    @RequestParam(defaultValue = "id") String sort,
                                     @RequestParam(defaultValue = "asc") String order){
         return ResponseEntity.ok(translateService.getAll(word,page,size,sort,order));
     }
