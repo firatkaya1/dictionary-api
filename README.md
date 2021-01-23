@@ -84,6 +84,192 @@ Toplamda 5 adet temel end-point bulunmaktadır. Bunlar english/  turkish/  categ
 
 
 
+## Örnek Kullanımları
+
+### 1- Kelimenin Türkçe anlamlarını elde etme
+
+İstediğiniz bir ingilizce kelimenin, türkçe anlamlarını sayfalaştırılabilir bir formatta JSON tipinde getirmek istiyorsanız aşağıdaki şekilde istek 
+atarak elde edebilirsiniz. Örnek olarak **hello** kelimesi kullanılmıştır.  
+Burada gerekli olan tek şey aramak istediğiniz kelimedir. Diğer değerler istenildiği takdirde yazılır. Parantez içindekiler default değerleri temsil eder.  
+**page** = Bulunduğu sayfa sayısını(1),     
+**size** = Bir sayfadaki element sayısını(10),    
+**sort** = Kelimelerin sıralama tipini(id)  
+**order** = Azalan yada Artan değerini(asc),  
+**word** = Aratılmak istenen kelimeyi temsil eder.
+
+```
+curl -X GET "http://localhost:8085/translate?order=asc&page=1&size=10&sort=id&word=word" -H "accept: */*"
+```
+Örnek çıktısı : 
+
+```json
+{
+  "content": [
+    {
+      "id": 635276,
+      "word_en": "hello",
+      "word_tr": "merhaba",
+      "category": "Common Usage",
+      "type": "interjection"
+    },
+    {
+      "id": 635277,
+      "word_en": "hello",
+      "word_tr": "merhaba",
+      "category": "General",
+      "type": "interjection"
+    },
+    {
+      "id": 635278,
+      "word_en": "hello",
+      "word_tr": "selam",
+      "category": "General",
+      "type": "interjection"
+    },
+    {
+      "id": 635279,
+      "word_en": "hello",
+      "word_tr": "alo",
+      "category": "General",
+      "type": "interjection"
+    },
+    {
+      "id": 635280,
+      "word_en": "hello",
+      "word_tr": "merhabalar",
+      "category": "Speaking",
+      "type": "noun"
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "sorted": true,
+      "unsorted": false,
+      "empty": false
+    },
+    "pageNumber": 0,
+    "pageSize": 10,
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalPages": 1,
+  "totalElements": 5,
+  "last": true,
+  "sort": {
+    "sorted": true,
+    "unsorted": false,
+    "empty": false
+  },
+  "size": 10,
+  "number": 0,
+  "numberOfElements": 5,
+  "first": true,
+  "empty": false
+}
+```
+### 2- Kelimenin Türkçe anlamlarını elde etme
+Burada ise, yukarıdaki işlemin aynısı tekrarlanmaktadır. Fakat burada elde edilen çıktı yukarıdakinden daha farklıdır. Çıktı sadece bir liste yapısı içerir. Sayfalaştırılmış bir format sunmaz. Bu yöntemin kullanılması *tavsiye edilmez*. Talep ettiğiniz kelimenin yüzlerce anlamı var ise, bekleme süreniz daha fazla olacaktır. 
+```
+curl -X GET "http://localhost:8085/translate/hello" -H "accept: */*"
+```
+Örnek çıktısı : 
+
+```json
+[
+  {
+    "id": 635276,
+    "word_en": "hello",
+    "word_tr": "merhaba",
+    "category": "Common Usage",
+    "type": "interjection"
+  },
+  {
+    "id": 635277,
+    "word_en": "hello",
+    "word_tr": "merhaba",
+    "category": "General",
+    "type": "interjection"
+  },
+  {
+    "id": 635278,
+    "word_en": "hello",
+    "word_tr": "selam",
+    "category": "General",
+    "type": "interjection"
+  },
+  {
+    "id": 635279,
+    "word_en": "hello",
+    "word_tr": "alo",
+    "category": "General",
+    "type": "interjection"
+  },
+  {
+    "id": 635280,
+    "word_en": "hello",
+    "word_tr": "merhabalar",
+    "category": "Speaking",
+    "type": "noun"
+  }
+]
+```
+
+### 3- ID değerlerine göre getirme 
+
+Bu başlık altında, bir ID değerine göre ingilizce, türkçe kelime, kategori ve type getirilmesi gösterilmiştir. 
+
+Sadece ingilizce kelimeyi getirmek için;  
+```
+curl -X GET "http://localhost:8085/english/125365" -H "accept: */*"
+```
+ Örnek çıktısı  
+```
+{
+  "id": 125365,
+  "en_word": "outports"
+}
+```
+Sadece türkçe kelimeyi getirmek için;
+```
+curl -X GET "http://localhost:8085/turkish/56324" -H "accept: */*"
+```
+ Örnek çıktısı  
+```
+{
+  "id": 56324,
+  "word": "astronot gibi"
+}
+```
+Sadece kategori getirmek için; 
+```
+curl -X GET "http://localhost:8085/category/35" -H "accept: */*"
+```
+ Örnek çıktısı  
+```
+{
+  "id": 35,
+  "name": "Music"
+}
+```
+
+Sadece type getirmek için;  
+```
+curl -X GET "http://localhost:8085/type/3" -H "accept: */*"
+```
+ Örnek çıktısı  
+```
+{
+  "id": 3,
+  "name": "adverb"
+}
+```
+
+
+
+
+
+
 
 
 
