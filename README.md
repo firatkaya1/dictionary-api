@@ -248,9 +248,11 @@ curl -X GET "http://localhost:8085/type/3" -H "accept: */*"
   "name": "adverb"
 }
 ```
+Daha detaylı bir şekilde endpointleri incelemek ve test etmek için swagger'i kullanabilirsiniz. Database'nin kendisine [buradan](https://github.com/firatkaya1/dictionary) ulaşabilirsiniz.
 
+Bir problemle karşılaşırsanız bana yazabilirsiniz. 
 
-
+[me@kayafirat.com](mailto:me@kayafirat.com?subject=[GitHub]%20dictionary-api)
 
 
 
