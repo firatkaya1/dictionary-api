@@ -48,6 +48,7 @@ Toplamda 5 adet temel end-point bulunmaktadır. Bunlar english/  turkish/  categ
 | translate/id/{id}  | GET  | Belirtilen ID numarasına sahip eşleştirilmiş kelimeleri getirir. |
 | translate/{word} | GET | İngilizce kelimenin türkçe anlamlarını getirir. |
 | translate/ | GET | İngilizce kelimenin türkçe anlamlarını sayfalaştırılabilir bir formatta getirir. |
+| translate/ | POST | Yeni bir eşleştirme oluşturur.  |
 | english/{id}  | GET  | Belirtilen ID numarasına sahip ingilizce kelimeyi getirir. |
 | english/ | POST | Yeni bir ingilizce kelime eklemek için kullanılır. |
 | english/ | PUT | Veritabanında kayıtlı bir ingilizce kelimeyi güncellemek için kullanılır.  |
