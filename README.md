@@ -48,40 +48,24 @@ Toplamda 5 adet temel end-point bulunmaktadır. Bunlar english/  turkish/  categ
 | translate/id/{id}  | GET  | Belirtilen ID numarasına sahip eşleştirilmiş kelimeleri getirir. |
 | translate/{word} | GET | İngilizce kelimenin türkçe anlamlarını getirir. |
 | translate/ | GET | İngilizce kelimenin türkçe anlamlarını sayfalaştırılabilir bir formatta getirir. |
-
-
-| Endpoint | HTTP Method | Açıklama |
-| ------------- | ------------- |------------- |
 | english/{id}  | GET  | Belirtilen ID numarasına sahip ingilizce kelimeyi getirir. |
-| english/ | POST | Yeni bir ingilizce kelime eklemek için kullanılır. (1) |
+| english/ | POST | Yeni bir ingilizce kelime eklemek için kullanılır. |
 | english/ | PUT | Veritabanında kayıtlı bir ingilizce kelimeyi güncellemek için kullanılır.  |
 | english/{id}  | DELETE | Veritabanında kayıtlı bir ingilizce kelimeyi silmek için kullanılır. |
-| english/ | GET | Tüm ingilizce kelimeleri sayfalaştırılabilir bir formatta getirir.(1) |
-
-
-| Endpoint | HTTP Method | Açıklama |
-| ------------- | ------------- |------------- |
+| english/ | GET | Tüm ingilizce kelimeleri sayfalaştırılabilir bir formatta getirir. |
 | turkish/{id}  | GET  | Belirtilen ID numarasına sahip türkçe kelimeyi getirir. |
-| turkish/ | POST | Yeni bir türkçe kelime eklemek için kullanılır. (1) |
+| turkish/ | POST | Yeni bir türkçe kelime eklemek için kullanılır. |
 | turkish/ | PUT | Veritabanında kayıtlı bir türkçe kelimeyi güncellemek için kullanılır.  |
 | turkish/{id}  | DELETE | Veritabanında kayıtlı bir türkçe kelimeyi silmek için kullanılır. |
-| turkish/ | GET | Tüm ingilizce kelimeleri sayfalaştırılabilir bir formatta getirir.(1) |
-
-
-| Endpoint | HTTP Method | Açıklama |
-| ------------- | ------------- |------------- |
+| turkish/ | GET | Tüm ingilizce kelimeleri sayfalaştırılabilir bir formatta getirir. |
 | category/{id}  | GET  | Belirtilen ID numarasına sahip kategoriyi getirir. |
-| category/ | POST | Yeni bir kategori eklemek için kullanılır. (1) |
+| category/ | POST | Yeni bir kategori eklemek için kullanılır. |
 | category/ | PUT | Veritabanında kayıtlı bir kategoriyi güncellemek için kullanılır.  |
 | category/{id}  | DELETE | Veritabanında kayıtlı bir kategori silmek için kullanılır. |
-
-| Endpoint | HTTP Method | Açıklama |
-| ------------- | ------------- |------------- |
 | type/{id}  | GET  | Belirtilen ID numarasına sahip kelime tipini getirir. |
-| type/ | POST | Yeni bir kelime tipi eklemek için kullanılır. (1) |
+| type/ | POST | Yeni bir kelime tipi eklemek için kullanılır. |
 | type/ | PUT | Veritabanında kayıtlı bir kelime tipini güncellemek için kullanılır.  |
 | type/{id}  | DELETE | Veritabanında kayıtlı bir kelime tipini silmek için kullanılır. |
-
 
 
 ## Örnek Kullanımları
