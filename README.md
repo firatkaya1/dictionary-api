@@ -1,8 +1,7 @@
 Read this document in turkish language :point_left:
 
 ## Nedir ? 
-
-Spring Boot frameworkü kullanılarak geliştirilmiş bir web servisidir. [Dictionary](https://raw.githubusercontent.com/firatkaya1/dictionary) database'sini daha rahat kullanabilmek için oluşturulmuştur.    
+İngilizce-Türkçe ve Türkçe-İngilizce çevirileri için geliştirilmiş bir web servisidir. [Dictionary](https://raw.githubusercontent.com/firatkaya1/dictionary) database'sini daha rahat kullanabilmek için oluşturulmuştur.    
 
 ## Nasıl Yükleyebilirim ? 
 
