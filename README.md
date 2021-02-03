@@ -1,90 +1,84 @@
 Read this document in turkish language :point_left:
 
-## Nedir ? 
-İngilizce-Türkçe ve Türkçe-İngilizce çevirileri için geliştirilmiş bir web servisidir. [Dictionary](https://raw.githubusercontent.com/firatkaya1/dictionary) database'sini daha rahat kullanabilmek için oluşturulmuştur.    
+## What is this ? 
+This is a web service for translating english words to turkish or turkish to english. This web service has been created to use [Dictionary](https://raw.githubusercontent.com/firatkaya1/dictionary)  more comfortably.
 
-## Nasıl Yükleyebilirim ? 
+## How to install ? 
 
-Projeyi bilgisayarınıza kopyalayın. 
-
+Copy the project to your computer.
 ```git
 git clone https://github.com/firatkaya1/dictionary-api.git
 ```
-Ardından projeyi clonlamış olduğunuz path'in içine terminal ekranından girin. 
-
+After that open the terminal in  project file.
 ```
 cd dictionary-api
 ```
-Java projesini .jar dosyası haline getirin.
-
+Compile java project to .jar file.
 ```
 mvn clean package
 ```
 
-Sonra projeyi docker aracılığıyla build edin. 
-
+Then build project with docker.
 ```
 docker build -f Dockerfile -t dictionary-api .
 ```
 
-Son olarak, docker'i çalıştırın. 
-
+Lastly run the docker.
 ```
 docker run -p 8085:8085 dictionary-api
 ```
-Tarayıcınızı açın ve **localhost:8085** adresine istek atın. İşte bu kadar, projeyi başarılıyla bilgisayarınıza kurdunuz. :punch: 
+Open your browser and send a request to **localhost:8085**. Successfully installed the project to your computer. That's it! :punch:
 
-## Nasıl Uygularım ? 
+## How to use ? 
+In this step we will see how we can use each REST endpoint with examples. This web service has Swagger API Docs. If you would like to see all endpoints just send a request to **localhost:8085/swagger-ui/index.html**.
 
-Bu adımda, başarılı bir şekilde çalıştırdığımız web servisin end-pointlerinin neler olduğunu, nasıl kullanıldığını ve örnek sonuçlarını inceleyeceğiz. Bu web servisi swagger dökümantasyonu bulunmaktadır. Eğer tüm end-pointleri görmek istiyorsanız, **localhost:8085/swagger-ui/index.html** adresine istek atınız. 
+Simply this service created for search by word,category,type and create,read,update,delete.You can find the Database in this [address](https://raw.githubusercontent.com/firatkaya1/dictionary) .
 
-Basit bir şekilde bu web servis, İngilizce,Türkçe kelimelere, Kategori ve Tip alanlarında arama,ekleme,çıkarma,güncelleme ve silme işlemlerini yapmasını sağlamak için oluşturulmuştur. Database'nin kendisine [bu adresten](https://raw.githubusercontent.com/firatkaya1/dictionary) ulaşabilirsiniz. 
+There are 5 endpoints totally. These are start with english/  turkish/  category/ type/ translate/
 
-Toplamda 5 adet temel end-point bulunmaktadır. Bunlar english/  turkish/  category/  type/  ve translate/  dir. 
-
-| Endpoint | HTTP Method | Açıklama |
+| Endpoint | HTTP Method | Explain |
 | ------------- | ------------- |------------- |
-| translate/id/{id}  | GET  | Belirtilen ID numarasına sahip eşleştirilmiş kelimeleri getirir. |
-| translate/{word} | GET | İngilizce kelimenin türkçe anlamlarını getirir. |
-| translate/ | GET | İngilizce kelimenin türkçe anlamlarını sayfalaştırılabilir bir formatta getirir. |
-| translate/ | POST | Yeni bir eşleştirme oluşturur.  |
-| english/{id}  | GET  | Belirtilen ID numarasına sahip ingilizce kelimeyi getirir. |
-| english/ | POST | Yeni bir ingilizce kelime eklemek için kullanılır. |
-| english/ | PUT | Veritabanında kayıtlı bir ingilizce kelimeyi güncellemek için kullanılır.  |
-| english/{id}  | DELETE | Veritabanında kayıtlı bir ingilizce kelimeyi silmek için kullanılır. |
-| english/ | GET | Tüm ingilizce kelimeleri sayfalaştırılabilir bir formatta getirir. |
-| turkish/{id}  | GET  | Belirtilen ID numarasına sahip türkçe kelimeyi getirir. |
-| turkish/ | POST | Yeni bir türkçe kelime eklemek için kullanılır. |
-| turkish/ | PUT | Veritabanında kayıtlı bir türkçe kelimeyi güncellemek için kullanılır.  |
-| turkish/{id}  | DELETE | Veritabanında kayıtlı bir türkçe kelimeyi silmek için kullanılır. |
-| turkish/ | GET | Tüm ingilizce kelimeleri sayfalaştırılabilir bir formatta getirir. |
-| category/{id}  | GET  | Belirtilen ID numarasına sahip kategoriyi getirir. |
-| category/ | POST | Yeni bir kategori eklemek için kullanılır. |
-| category/ | PUT | Veritabanında kayıtlı bir kategoriyi güncellemek için kullanılır.  |
-| category/{id}  | DELETE | Veritabanında kayıtlı bir kategori silmek için kullanılır. |
-| type/{id}  | GET  | Belirtilen ID numarasına sahip kelime tipini getirir. |
-| type/ | POST | Yeni bir kelime tipi eklemek için kullanılır. |
-| type/ | PUT | Veritabanında kayıtlı bir kelime tipini güncellemek için kullanılır.  |
-| type/{id}  | DELETE | Veritabanında kayıtlı bir kelime tipini silmek için kullanılır. |
+| translate/id/{id}  | GET  | Returns matched words with the specified ID number |
+| translate/{word} | GET | Returns the Turkish meanings of the English word. |
+| translate/ | GET | Returns the Turkish meanings of the English word in pageable format. |
+| translate/ | POST | Create new mapping.  |
+| english/{id}  | GET  | Returns the English word with the ID number. |
+| english/ | POST | Used to add new English word. |
+| english/ | PUT | Used to update the existing English word. |
+| english/{id}  | DELETE | Used to delete existing English word by id. |
+| english/ | GET | Returns all English words in pageable format. |
+| turkish/{id}  | GET  | Returns matched word with the specified ID number |
+| turkish/ | POST | Used to add new Turkish word. |
+| turkish/ | PUT | Used to update the existing Turkish word.  |
+| turkish/{id}  | DELETE | Used to delete existing Turkish word by id. |
+| turkish/ | GET | Returns all Turkish words in pageable format. |
+| category/{id}  | GET  | Returns matched category with the specified ID number. |
+| category/ | POST | Used to add new Category. |
+| category/ | PUT |  Used to update the existing Category. |
+| category/{id}  | DELETE | Used to delete existing Category by id. |
+| type/{id}  | GET  | Returns matched type with the specified ID number |
+| type/ | POST |  Used to add new type. |
+| type/ | PUT |  Used to update the existing type.. |
+| type/{id}  | DELETE | Used to delete existing type by id. |
 
 
-## Örnek Kullanımları
+## Examples
 
-### 1- Kelimenin Türkçe anlamlarını elde etme
+### 1- Returns the Turkish meanings of the English word 
 
-İstediğiniz bir ingilizce kelimenin, türkçe anlamlarını sayfalaştırılabilir bir formatta JSON tipinde getirmek istiyorsanız aşağıdaki şekilde istek 
-atarak elde edebilirsiniz. Örnek olarak **hello** kelimesi kullanılmıştır.  
-Burada gerekli olan tek şey aramak istediğiniz kelimedir. Diğer değerler istenildiği takdirde yazılır. Parantez içindekiler default değerleri temsil eder.  
-**page** = Bulunduğu sayfa sayısını(1),     
-**size** = Bir sayfadaki element sayısını(10),    
-**sort** = Kelimelerin sıralama tipini(id)  
-**order** = Azalan yada Artan değerini(asc),  
-**word** = Aratılmak istenen kelimeyi temsil eder.
+If you want to bring the Turkish meanings of an English word you want in pageable format in JSON type, request as below.  As an example, the word **hello** is used.
+  
+The only thing needed here is the word you want to search. Other values are up to you. Parentheses represent default values.  
+**page** = Page number (1),     
+**size** = Number of element each page(10),    
+**sort** = Sort by XX(id)  
+**order** = Ascending or Descending(asc),  
+**word** = Represents the searched word.
 
 ```
 curl -X GET "http://localhost:8085/translate?order=asc&page=1&size=10&sort=id&word=word" -H "accept: */*"
 ```
-Örnek çıktısı : 
+Example output : 
 
 ```json
 {
@@ -152,12 +146,12 @@ curl -X GET "http://localhost:8085/translate?order=asc&page=1&size=10&sort=id&wo
   "empty": false
 }
 ```
-### 2- Kelimenin Türkçe anlamlarını elde etme
-Burada ise, yukarıdaki işlemin aynısı tekrarlanmaktadır. Fakat burada elde edilen çıktı yukarıdakinden daha farklıdır. Çıktı sadece bir liste yapısı içerir. Sayfalaştırılmış bir format sunmaz. Bu yöntemin kullanılması *tavsiye edilmez*. Talep ettiğiniz kelimenin yüzlerce anlamı var ise, bekleme süreniz daha fazla olacaktır. 
+### 2- Returns the Turkish meanings of the English word 
+Here, the same process above is repeated. But the output here will be different from the one above. The output contains only one list structure. It does not offer a paginated format. This method is **not recommended**. If the word you request has hundreds of meanings, your waiting time will be longer.
 ```
 curl -X GET "http://localhost:8085/translate/hello" -H "accept: */*"
 ```
-Örnek çıktısı : 
+Example output : 
 
 ```json
 [
@@ -199,37 +193,37 @@ curl -X GET "http://localhost:8085/translate/hello" -H "accept: */*"
 ]
 ```
 
-### 3- ID değerlerine göre getirme 
+### 3- Fetch by ID values
 
-Bu başlık altında, bir ID değerine göre ingilizce, türkçe kelime, kategori ve type getirilmesi gösterilmiştir. 
+Under this heading, it is shown to bring English, Turkish words, categories and types according to an ID value.
 
-Sadece ingilizce kelimeyi getirmek için;  
+Just to bring the English word;
 ```
 curl -X GET "http://localhost:8085/english/125365" -H "accept: */*"
 ```
- Örnek çıktısı  
+Example output ;
 ```
 {
   "id": 125365,
   "en_word": "outports"
 }
 ```
-Sadece türkçe kelimeyi getirmek için;
+Just to bring the Turkish word;
 ```
 curl -X GET "http://localhost:8085/turkish/56324" -H "accept: */*"
 ```
- Örnek çıktısı  
+Example output ;
 ```
 {
   "id": 56324,
   "word": "astronot gibi"
 }
 ```
-Sadece kategori getirmek için; 
+Just to bring the Category;
 ```
 curl -X GET "http://localhost:8085/category/35" -H "accept: */*"
 ```
- Örnek çıktısı  
+Example output ;
 ```
 {
   "id": 35,
@@ -237,20 +231,20 @@ curl -X GET "http://localhost:8085/category/35" -H "accept: */*"
 }
 ```
 
-Sadece type getirmek için;  
+Just to bring the Type;
 ```
 curl -X GET "http://localhost:8085/type/3" -H "accept: */*"
 ```
- Örnek çıktısı  
+Example output ;
 ```
 {
   "id": 3,
   "name": "adverb"
 }
 ```
-Daha detaylı bir şekilde endpointleri incelemek ve test etmek için swagger'i kullanabilirsiniz. Database'nin kendisine [buradan](https://github.com/firatkaya1/dictionary) ulaşabilirsiniz.
+You can use the Swagger to examine and test endpoints in more detail. 
 
-Bir problemle karşılaşırsanız bana yazabilirsiniz. 
+Contact me if you encounter any problems.
 
 [me@kayafirat.com](mailto:me@kayafirat.com?subject=[GitHub]%20dictionary-api)
 
