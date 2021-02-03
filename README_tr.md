@@ -1,5 +1,5 @@
 
-english  :point_left:
+[English ](https://github.com/firatkaya1/dictionary-api/blob/master/README.md) :point_left:  
 
 ## Nedir ? 
 İngilizce-Türkçe ve Türkçe-İngilizce çevirileri için geliştirilmiş bir web servisidir. [Dictionary](https://raw.githubusercontent.com/firatkaya1/dictionary) database'sini daha rahat kullanabilmek için oluşturulmuştur.    
