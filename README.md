@@ -1,4 +1,4 @@
-[Turkish ](https://github.com/firatkaya1/dictionary-api/blob/master/README_tr.md) :point_left:  
+[Turkish ](https://github.com/firatkaya1/dictionary-api/blob/master/README_tr.md)  :point_left:  
 
 ## What is this ? 
 This is a web service for translating english words to turkish or turkish to english. This web service has been created to use [Dictionary](https://raw.githubusercontent.com/firatkaya1/dictionary)  more comfortably.
