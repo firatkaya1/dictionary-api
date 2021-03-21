@@ -3,7 +3,7 @@
 ## What is this ? 
 This is a web service for translating english words to turkish or turkish to english. This web service has been created to use [Dictionary](https://raw.githubusercontent.com/firatkaya1/dictionary)  more comfortably.
 
-## How to install ? 
+## How to install ?  
 
 Copy the project to your computer.
 ```git
